@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var path = require('path');
-
+var playerData = require('./users.json');
+var fs = require('fs');
 /* GET home page.
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
@@ -22,9 +23,19 @@ router.get('/join/room', function (req, res) {
 
 router.post('/api/play', function (req, res) {
   console.log("Post Data:"+ req.body.playerName);
-  var players = {};
-  var playerArr = new Array();
-  res.sendFile(path.join(__dirname + '/../views/game_screen.html'));
+  var playerArr = playerData.players;
+  playerArr.push(req.body.playerName);
+  playerData.players = playerArr;
+
+
+  fs.writeFile('./users.json', JSON.stringify(playerData), function (err,data) {
+    if (err) {
+      return console.log(err);
+    }
+    console.log(playerData);
+    res.send(JSON.stringify(playerData));
+  });
+ // res.sendFile(path.join(__dirname + '/../views/game_screen.html'));
 });
 
 // GET request handler for css and javascript files
