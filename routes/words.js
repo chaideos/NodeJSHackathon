@@ -32,4 +32,12 @@ router.get('/:currentWord/:word', function(req, res, next) {
   }
 });
 
+router.get('/score/:currentWord/:word', function(req, res, next) {
+  console.log(req.params.word);
+  console.log(req.params.currentWord);
+
+  var score = wordDictionary.scoreWord(req.params.currentWord, req.params.word);
+  res.json({ score: score })
+});
+
 module.exports = router;
