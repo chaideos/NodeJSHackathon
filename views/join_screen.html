@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NodeJS Hackathon Game</title>
+    <link type="text/css" rel="stylesheet" href="/styles/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="/styles/wordGame.css" />
+    <script type="text/javascript" src="/scripts/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="/scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/scripts/wordGame.js"></script>
+</head>
+<body>
+<div class="container-fluid col-lg-8 col-md-10">
+    <div>
+        <h3 id="errorContainer">&nbsp;</h3>
+    </div>
+    <form id="joinGameForm" class="form-inline" method="post" action="/api/play/">
+        <div class="form-group">
+            <label for="playerName">Player Name:</label>
+            <input type="text" class="form-control" name="playerName" id="playerName">
+        </div>
+        <button type="submit" class="btn btn-primary">Join Room!</button>
+    </form>
+
+</div>
+</body>
+</html>
