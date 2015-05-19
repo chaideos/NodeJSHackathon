@@ -24,6 +24,8 @@ app.get('/join/room', function (req, res) {
 
 app.post('/api/play', function (req, res) {
     console.log("Post Data:"+ req.body.playerName);
+    var players = {};
+    var playerArr = new Array();
     res.sendFile(path.join(__dirname + '/views/game_screen.html'));
 });
 
@@ -48,7 +50,7 @@ app.get('/styles/wordGame.css', function (req, res) {
     res.sendFile(path.join(__dirname + '/styles/wordGame.css'));
 });
 
-var server = app.listen(3000, function () {
+var server = app.listen(8888, function () {
 
     var host = server.address().address;
     var port = server.address().port;
