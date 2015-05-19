@@ -1,0 +1,22 @@
+Challenge 1 (Web)
+There can only be 1
+·        Pick a Handle (8 Squares 9x9 – Center is game data)
+·        When the game starts you have 1 minute to win points!
+·        Enter a word that contains the last letter of the current word
+·        Current word:  Banana (Random word)
+·        Your “valid” word: Action
+·        You get points for letter “a”.  See point system below:
+·        If the word has been used before (by others and yourself), you don’t get any points.
+Game Dynamics
+Center of the screen, scroll list of words that have been used.
+Player enters words in their block, list of words they entered and his/her current Points.
+Countdown timer the top
+Top of the screen should highlight the current 1st and 2nd place.
+Backend must use a dictionary (spelling)
+Player 1: sets the active word (enter in the middle)
+Player 1: starts the game.
+
+The point system
+
+Current word: “Play”  - You want to enter words that start with “y.”   So Yeah = 1 point, BUT if you type in Yoyo = 4 points.
+Current word: “Miss” - You type in Sassafras = 16 points.  So points are 2^n where n is the number of occurrences for greater then 1.
