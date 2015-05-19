@@ -14,6 +14,7 @@ router.post('/', function (req, res) {
     //    res.send(JSON.stringify(playerData));
     //});
     // res.sendFile(path.join(__dirname + '/../views/game_screen.html'));
+    res.sendStatus(200);
 });
 
 module.exports = router;
