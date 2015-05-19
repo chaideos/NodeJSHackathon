@@ -11,7 +11,37 @@
 </head>
 <body>
 <div class="container-fluid">
-    <h1>Hello World!!!</h1>
+    <div class="row rowSeperator">
+        <div class="col-md-3 col-lg-2"><h1 class="text-right" id="score">Score: &nbsp;</h1></div>
+        <div class="col-md-6 col-lg-8">
+            <form id="wordPlayForm" class="form-horizontal" method="post" action="/api/play/">
+                <div class="form-group">
+                    <label for="playerWord">Type a Word:</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="playerWord" id="playerWord">
+                    <span class="input-group-btn seperator">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </span>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-3 col-lg-2"><h1 id="timerText">Timer: &nbsp;</h1></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 col-lg-2">
+            <span>Current Player Words:</span>
+        </div>
+        <div class="jumbotron col-md-6 col-lg-8">
+            <h1>Scoring Game Words</h1>
+        </div>
+        <div class="col-md-3 col-lg-2">
+            <span>Players:</span>
+        </div>
+    </div>
+
 </div>
 </body>
 </html>

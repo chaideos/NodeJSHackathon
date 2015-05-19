@@ -20,6 +20,29 @@ router.get('/join/room', function (req, res) {
   res.sendFile(path.join(__dirname + '/../views/join_screen.html'));
 });
 
+router.get('/api/play', function (req, res) {
+  res.sendFile(path.join(__dirname + '/../views/game_screen.html'));
+})
+
+/*
+router.post('/api/play', function (req, res) {
+  console.log("Post Data:"+ req.body.playerName);
+  var playerArr = playerData.players;
+  playerArr.push(req.body.playerName);
+  playerData.players = playerArr;
+
+
+  fs.writeFile('./users.json', JSON.stringify(playerData), function (err,data) {
+    if (err) {
+      return console.log(err);
+    }
+    console.log(playerData);
+    res.send(JSON.stringify(playerData));
+  });
+ // res.sendFile(path.join(__dirname + '/../views/game_screen.html'));
+});
+*/
+
 // GET request handler for css and javascript files
 router.get('/scripts/jquery-1.11.2.min.js', function (req, res) {
   res.sendFile(path.join(__dirname + '/../scripts/jquery-1.11.2.min.js'));
